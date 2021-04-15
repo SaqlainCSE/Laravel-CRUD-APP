@@ -22,4 +22,5 @@ Route::get('/department/delete/{id}', 'App\Http\Controllers\DepartmentController
 Route::get('/departments/{id}/edit', 'App\Http\Controllers\DepartmentController@edit');
 Route::post('/department/{id}', 'App\Http\Controllers\DepartmentController@update');
 Route::get('/departments', 'App\Http\Controllers\DepartmentController@index');
+Route::get('/search', 'App\Http\Controllers\DepartmentController@search');
 

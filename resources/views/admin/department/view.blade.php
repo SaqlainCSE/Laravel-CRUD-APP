@@ -7,7 +7,15 @@
     <title>View</title>
 </head>
 <body>
-    <a href="/department/create">Add Department</a><br><br>
+    <a href="/department/create">Add Department</a><br>
+    <a href="/departments">View All</a><br><br><br>
+
+<form action="/search" method="GET">
+    @csrf
+    <input type="text" name="search">
+    <input type="submit" value="Search">
+</form><br><br>
+
 <table border="1">
     <tr>
         <th>SL</th>

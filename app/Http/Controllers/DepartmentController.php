@@ -94,4 +94,21 @@ class DepartmentController extends Controller
         $data->delete();
         return back()->with('success', 'Data Deleted Successfully');
     }
+
+    //This is search controller
+    public function search(Request $request)
+    {
+        $this->validate($request, [
+            'search' => 'required'
+        ]);
+
+        $request_txt = $request->search;
+        $dpt=Department::orderBy('id','desc')
+                        ->where('dpt_name','like','%'.$request_txt.'%')
+                        ->orWhere('dpt_code','like','%'.$request_txt.'%')
+                        ->get();
+
+        return view('admin.department.view', compact('dpt'));
+
+    }
 }
